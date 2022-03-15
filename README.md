@@ -33,11 +33,11 @@ Let’s build Reddit. Well, maybe a very junior version of it called micro-reddi
     2. As before, add validations into your model and test them out in the console (refresh it!). Make sure you’ve required the two foreign keys (for posts and users) to be submitted, otherwise you could potentially have an orphan comment. You should not be able to save an invalid Comment and be able to save a valid Comment.
     3. Build a second user and create a new comment which represents this user commenting on the first user’s post.
     4. As before, add the associations you need between users, posts, and comments. You’ll need to be able to do the following methods successfully from the console (assuming your second user has an ID of 2):
-        > u2 = User.find(2)
-        > c1 = u2.comments.first should return that user’s comment. #comments returns an array with comments, which is why we need to use #first to actually retrieve the comment itself.
-        > c1.user should return that comment’s author User (u2).
-        > p1 = Post.first
-        > p1.comments.first should return the comment c1.
-        > c1.post should return the post p1.
+        1. u2 = User.find(2)
+        2. c1 = u2.comments.first should return that user’s comment. #comments returns an array with comments, which is why we need to use #first to actually retrieve the comment itself.
+        3. c1.user should return that comment’s author User (u2).
+        4. p1 = Post.first
+        5. p1.comments.first should return the comment c1.
+        6. c1.post should return the post p1.
     
     If any of those don’t work, double check your associations. Sometimes the error messages can be helpful in prompting you for how to set up those associations.
